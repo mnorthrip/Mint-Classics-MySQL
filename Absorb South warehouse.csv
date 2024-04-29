@@ -1,0 +1,5 @@
+warehouseCode,warehouseName,products,currentInventory,warehousePctCap,warehouseCap
+a,North,25,131688,72,182900
+b,East,38,219183,67,327139
+c,West,24,124880,50,249760
+d,South,23,79380,75,105840
