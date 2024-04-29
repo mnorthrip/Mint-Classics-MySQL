@@ -1,0 +1,110 @@
+warehouseCode,productCode,productName,productLine,totalOrders,oneYearOrders,currentInventory,yearsInventoryLeft,inventoryStatus
+a,S700_4002,"American Airlines: MD-11S",Planes,1085,448.97,8820,19.65,"Severely Overstocked"
+a,S10_1678,"1969 Harley Davidson Ultimate Chopper",Motorcycles,1057,437.38,7933,18.14,"Severely Overstocked"
+a,S24_3949,"Corsair F4U ( Bird Cage)",Planes,1051,434.90,6812,15.66,"Severely Overstocked"
+a,S700_3167,"F/A 18 Hornet 1/72",Planes,1047,433.24,551,1.27,Stocked
+a,S18_1662,"1980s Black Hawk Helicopter",Planes,1040,430.34,5330,12.39,"Severely Overstocked"
+a,S24_1578,"1997 BMW R 1100 S",Motorcycles,1033,427.45,7003,16.38,"Severely Overstocked"
+a,S12_2823,"2002 Suzuki XREO",Motorcycles,1028,425.38,9997,23.50,"Severely Overstocked"
+a,S24_2000,"1960 BSA Gold Star DBD34",Motorcycles,1015,420.00,15,0.04,Restock
+a,S32_1374,"1997 BMW F650 ST",Motorcycles,1014,419.59,178,0.42,Restock
+a,S24_4278,"1900s Vintage Tri-Plane",Planes,1009,417.52,2756,6.60,Overstocked
+a,S10_2016,"1996 Moto Guzzi 1100i",Motorcycles,999,413.38,6625,16.03,"Severely Overstocked"
+a,S50_4713,"2002 Yamaha YZR M1",Motorcycles,992,410.48,600,1.46,Stocked
+a,S10_4698,"2003 Harley-Davidson Eagle Drag Bike",Motorcycles,985,407.59,5582,13.70,"Severely Overstocked"
+a,S700_2466,"America West Airlines B757-200",Planes,984,407.17,9653,23.71,"Severely Overstocked"
+a,S700_2834,"ATA: B757-300",Planes,973,402.62,7106,17.65,"Severely Overstocked"
+a,S24_1785,"1928 British Royal Navy Airplane",Planes,972,402.21,3627,9.02,Overstocked
+a,S72_1253,"Boeing X-32A JSF",Planes,960,397.24,4857,12.23,"Severely Overstocked"
+a,S18_3782,"1957 Vespa GS150",Motorcycles,959,396.83,7689,19.38,"Severely Overstocked"
+a,S24_2360,"1982 Ducati 900 Monster",Motorcycles,947,391.86,6840,17.46,"Severely Overstocked"
+a,S18_2625,"1936 Harley Davidson El Knucklehead",Motorcycles,945,391.03,4357,11.14,"Severely Overstocked"
+a,S24_2841,"1900s Vintage Bi-Plane",Planes,940,388.97,5942,15.28,"Severely Overstocked"
+a,S18_2581,"P-51-D Mustang",Planes,917,379.45,992,2.61,Stocked
+a,S32_2206,"1982 Ducati 996 R",Motorcycles,906,374.90,9241,24.65,"Severely Overstocked"
+a,S32_4485,"1974 Ducati 350 Mk3 Desmo",Motorcycles,898,371.59,3341,8.99,Overstocked
+a,S700_1691,"American Airlines: B767-300",Planes,894,369.93,5841,15.79,"Severely Overstocked"
+b,S18_3232,"1992 Ferrari 360 Spider red","Classic Cars",1808,748.14,8347,11.16,"Severely Overstocked"
+b,S24_3856,"1956 Porsche 356A Coupe","Classic Cars",1052,435.31,6600,15.16,"Severely Overstocked"
+b,S10_4757,"1972 Alfa Romeo GTA","Classic Cars",1030,426.21,3252,7.63,Overstocked
+b,S12_1108,"2001 Ferrari Enzo","Classic Cars",1019,421.66,3619,8.58,Overstocked
+b,S18_4721,"1957 Corvette Convertible","Classic Cars",1013,419.17,1249,2.98,Stocked
+b,S700_2824,"1982 Camaro Z28","Classic Cars",997,412.55,6934,16.81,"Severely Overstocked"
+b,S12_4675,"1969 Dodge Charger","Classic Cars",992,410.48,7323,17.84,"Severely Overstocked"
+b,S18_2238,"1998 Chrysler Plymouth Prowler","Classic Cars",986,408.00,4724,11.58,"Severely Overstocked"
+b,S24_2840,"1958 Chevy Corvette Limited Edition","Classic Cars",983,406.76,2542,6.25,Overstocked
+b,S24_1444,"1970 Dodge Coronet","Classic Cars",976,403.86,4074,10.09,"Severely Overstocked"
+b,S18_3278,"1969 Dodge Super Bee","Classic Cars",974,403.03,1917,4.76,Stocked
+b,S18_1889,"1948 Porsche 356-A Roadster","Classic Cars",972,402.21,8826,21.94,"Severely Overstocked"
+b,S24_3371,"1971 Alpine Renault 1600s","Classic Cars",969,400.97,7995,19.94,"Severely Overstocked"
+b,S12_3891,"1969 Ford Falcon","Classic Cars",965,399.31,1049,2.63,Stocked
+b,S12_3148,"1969 Corvair Monza","Classic Cars",963,398.48,6906,17.33,"Severely Overstocked"
+b,S10_1949,"1952 Alpine Renault 1300","Classic Cars",961,397.66,7305,18.37,"Severely Overstocked"
+b,S24_2766,"1949 Jaguar XK 120","Classic Cars",949,392.69,2350,5.98,Overstocked
+b,S18_3685,"1948 Porsche Type 356 Roadster","Classic Cars",948,392.28,8990,22.92,"Severely Overstocked"
+b,S18_1129,"1993 Mazda RX-7","Classic Cars",947,391.86,3975,10.14,"Severely Overstocked"
+b,S18_4027,"1970 Triumph Spitfire","Classic Cars",945,391.03,5545,14.18,"Severely Overstocked"
+b,S24_4620,"1961 Chevrolet Impala","Classic Cars",941,389.38,7869,20.21,"Severely Overstocked"
+b,S12_1099,"1968 Ford Mustang","Classic Cars",933,386.07,68,0.18,Restock
+b,S10_4962,"1962 LanciaA Delta 16V","Classic Cars",932,385.66,6791,17.61,"Severely Overstocked"
+b,S12_3380,"1968 Dodge Charger","Classic Cars",925,382.76,9123,23.83,"Severely Overstocked"
+b,S18_1984,"1995 Honda Civic","Classic Cars",917,379.45,9772,25.75,"Severely Overstocked"
+b,S18_3482,"1976 Ford Gran Torino","Classic Cars",915,378.62,9127,24.11,"Severely Overstocked"
+b,S24_1628,"1966 Shelby Cobra 427 S/C","Classic Cars",915,378.62,8197,21.65,"Severely Overstocked"
+b,S18_1589,"1965 Aston Martin DB5","Classic Cars",914,378.21,9042,23.91,"Severely Overstocked"
+b,S24_2972,"1982 Lamborghini Diablo","Classic Cars",912,377.38,7723,20.46,"Severely Overstocked"
+b,S12_3990,"1970 Plymouth Hemi Cuda","Classic Cars",900,372.41,5663,15.21,"Severely Overstocked"
+b,S24_3432,"2002 Chevy Corvette","Classic Cars",894,369.93,9446,25.53,"Severely Overstocked"
+b,S24_2887,"1952 Citroen-15CV","Classic Cars",873,361.24,1452,4.02,Stocked
+b,S24_3191,"1969 Chevrolet Camaro Z28","Classic Cars",870,360.00,4695,13.04,"Severely Overstocked"
+b,S24_4048,"1992 Porsche Cayenne Turbo Silver","Classic Cars",867,358.76,6582,18.35,"Severely Overstocked"
+b,S18_2870,"1999 Indy 500 Monte Carlo SS","Classic Cars",855,353.79,8164,23.08,"Severely Overstocked"
+b,S24_1046,"1970 Chevy Chevelle SS 454","Classic Cars",803,332.28,1005,3.02,Stocked
+b,S18_4933,"1957 Ford Thunderbird","Classic Cars",767,317.38,3209,10.11,"Severely Overstocked"
+c,S18_1342,"1937 Lincoln Berline","Vintage Cars",1111,459.72,8693,18.91,"Severely Overstocked"
+c,S18_3856,"1941 Chevrolet Special Deluxe Cabriolet","Vintage Cars",1076,445.24,2378,5.34,Overstocked
+c,S50_1341,"1930 Buick Marquette Phaeton","Vintage Cars",1074,444.41,7062,15.89,"Severely Overstocked"
+c,S18_2949,"1913 Ford Model T Speedster","Vintage Cars",1038,429.52,4189,9.75,Overstocked
+c,S18_4668,"1939 Cadillac Limousine","Vintage Cars",995,411.72,6645,16.14,"Severely Overstocked"
+c,S18_3320,"1917 Maxwell Touring Car","Vintage Cars",992,410.48,7913,19.28,"Severely Overstocked"
+c,S24_3151,"1912 Ford Model T Delivery Wagon","Vintage Cars",991,410.07,9173,22.37,"Severely Overstocked"
+c,S18_4522,"1904 Buick Runabout","Vintage Cars",990,409.66,8290,20.24,"Severely Overstocked"
+c,S18_2957,"1934 Ford V8 Coupe","Vintage Cars",985,407.59,5649,13.86,"Severely Overstocked"
+c,S24_4258,"1936 Chrysler Airflow","Vintage Cars",983,406.76,4710,11.58,"Severely Overstocked"
+c,S32_4289,"1928 Ford Phaeton Deluxe","Vintage Cars",972,402.21,136,0.34,Restock
+c,S18_1367,"1936 Mercedes-Benz 500K Special Roadster","Vintage Cars",960,397.24,8635,21.74,"Severely Overstocked"
+c,S18_2325,"1932 Model A Ford J-Coupe","Vintage Cars",957,396.00,9354,23.62,"Severely Overstocked"
+c,S24_2022,"1938 Cadillac V-16 Presidential Limousine","Vintage Cars",955,395.17,2847,7.20,Overstocked
+c,S24_1937,"1939 Chevrolet Deluxe Coupe","Vintage Cars",937,387.72,7332,18.91,"Severely Overstocked"
+c,S24_3816,"1940 Ford Delivery Sedan","Vintage Cars",923,381.93,6621,17.34,"Severely Overstocked"
+c,S18_1749,"1917 Grand Touring Sedan","Vintage Cars",918,379.86,2724,7.17,Overstocked
+c,S18_3136,"18th Century Vintage Horse Carriage","Vintage Cars",907,375.31,5992,15.97,"Severely Overstocked"
+c,S24_3420,"1937 Horch 930V Limousine","Vintage Cars",884,365.79,2902,7.93,Overstocked
+c,S18_3140,"1903 Ford Model A","Vintage Cars",883,365.38,3913,10.71,"Severely Overstocked"
+c,S18_2795,"1928 Mercedes-Benz SSK","Vintage Cars",880,364.14,548,1.50,Stocked
+c,S18_4409,"1932 Alfa Romeo 8C2300 Spider Sport","Vintage Cars",866,358.34,6553,18.29,"Severely Overstocked"
+c,S18_2248,"1911 Ford Town Car","Vintage Cars",832,344.28,540,1.57,Stocked
+c,S24_3969,"1936 Mercedes Benz 500k Roadster","Vintage Cars",824,340.97,2081,6.10,Overstocked
+d,S18_4600,"1940s Ford truck","Trucks and Buses",1061,439.03,3128,7.12,Overstocked
+d,S12_4473,"1957 Chevy Pickup","Trucks and Buses",1056,436.97,6125,14.02,"Severely Overstocked"
+d,S18_2319,"1964 Mercedes Tour Bus","Trucks and Buses",1053,435.72,8258,18.95,"Severely Overstocked"
+d,S24_2300,"1962 Volkswagen Microbus","Trucks and Buses",1029,425.79,2327,5.47,Overstocked
+d,S700_2610,"The USS Constitution Ship",Ships,1020,422.07,7083,16.78,"Severely Overstocked"
+d,S24_2011,"18th century schooner",Ships,1011,418.34,1898,4.54,Stocked
+d,S18_1097,"1940 Ford Pickup Truck","Trucks and Buses",999,413.38,2613,6.32,Overstocked
+d,S18_2432,"1926 Ford Fire Engine","Trucks and Buses",998,412.97,2018,4.89,Stocked
+d,S32_3522,"1996 Peterbilt 379 Stake Bed with Outrigger","Trucks and Buses",988,408.83,814,1.99,Stocked
+d,S50_1392,"Diamond T620 Semi-Skirted Tanker","Trucks and Buses",979,405.10,1016,2.51,Stocked
+d,S12_1666,"1958 Setra Bus","Trucks and Buses",972,402.21,1579,3.93,Stocked
+d,S18_3029,"1999 Yamaha Speed Boat",Ships,966,399.72,4259,10.65,"Severely Overstocked"
+d,S50_1514,"1962 City of Detroit Streetcar",Trains,966,399.72,1645,4.12,Stocked
+d,S72_3212,"Pont Yacht",Ships,958,396.41,414,1.04,Stocked
+d,S32_2509,"1954 Greyhound Scenicruiser","Trucks and Buses",955,395.17,2874,7.27,Overstocked
+d,S700_3505,"The Titanic",Ships,952,393.93,1956,4.97,Stocked
+d,S32_3207,"1950's Chicago Surface Lines Streetcar",Trains,934,386.48,8601,22.25,"Severely Overstocked"
+d,S700_1138,"The Schooner Bluenose",Ships,934,386.48,1897,4.91,Stocked
+d,S18_3259,"Collectable Wooden Train",Trains,918,379.86,6450,16.98,"Severely Overstocked"
+d,S32_1268,"1980’s GM Manhattan Express","Trucks and Buses",911,376.97,5099,13.53,"Severely Overstocked"
+d,S700_1938,"The Mayflower",Ships,898,371.59,737,1.98,Stocked
+d,S700_2047,"HMS Bounty",Ships,897,371.17,3501,9.43,Overstocked
+d,S700_3962,"The Queen Mary",Ships,896,370.76,5088,13.72,"Severely Overstocked"
