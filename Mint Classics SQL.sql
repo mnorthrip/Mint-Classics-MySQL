@@ -1,5 +1,6 @@
 /* Two options to eliminate South warehouse at current inventory. */
 
+-- Query 1
 -- Absorb South warehouse into East or West warehouse.
 SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, 
        SUM(quantityInStock) AS currentInventory, warehousePctCap,
@@ -9,6 +10,7 @@ SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products,
     ON p.warehouseCode = w.warehouseCode
  GROUP BY 1;
 
+-- Query 2
 -- Distribute South warehouse product lines among remaining warehouses.
 SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, productLine, 
        SUM(quantityInStock) AS currentInventory, warehousePctCap, warehouseCap
@@ -27,6 +29,7 @@ SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, productLi
  
 /* Inventory Reduction. */
 
+-- Query 3
 -- Product Line summary stats.
 SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrdered) AS totalOrders,
        ROUND((SUM(quantityOrdered) / (2 + (5/12))), 2) AS oneYearOrders, quantityInStock AS currentInventory, 
@@ -43,6 +46,7 @@ SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrder
  GROUP BY 1, 2
  ORDER BY 1, 8 DESC;  
  
+-- Query 4
 -- Overstocked inventory. 
 SELECT warehouseCode, productLine,
        COUNT(CASE WHEN inventoryStatus = 'Restock' THEN 1 ELSE NULL END) AS 'restock <1 yr',
@@ -67,6 +71,7 @@ SELECT warehouseCode, productLine,
        ) sub
  GROUP BY 1, 2;
 
+-- Query 5
 -- Reducing inventory can eliminate more warehouses.
 SELECT pr.warehouseCode, warehouseName, COUNT(pr.productCode) AS products, orders AS totalOrders, ROUND((orders / (2 + (5/12))), 2) AS oneYearOrders,
        ROUND((orders / (2 + (5/12))) * 5, 2) AS fiveYearsOrders, ROUND((orders / (2 + (5/12))) * 10, 2) AS tenYearsOrders,
@@ -88,6 +93,7 @@ SELECT pr.warehouseCode, warehouseName, COUNT(pr.productCode) AS products, order
  
 /* Miscellaneous */
 
+-- Query 6
 -- Product missing sales data.
 SELECT p.warehouseCode, p.productCode, p.productName, p.productLine, quantityOrdered, p.quantityInStock
   FROM orderdetails o
