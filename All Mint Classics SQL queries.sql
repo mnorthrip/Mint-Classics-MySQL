@@ -1,4 +1,4 @@
-/* Warehouse elimination at current inventory. */
+/* Inventory Reorganization. */
 
 -- Query 1
 -- Warehouse capacity.
