@@ -33,44 +33,34 @@ SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, productLi
 -- Product orders and inventory.
 SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrdered) AS totalOrders,
        ROUND((SUM(quantityOrdered) / (2 + (5/12))), 2) AS oneYearOrders, quantityInStock AS currentInventory, 
-       ROUND(quantityInStock / (SUM(quantityOrdered) / (2 + (5/12))), 2) AS yearsInventoryLeft,
-       CASE WHEN (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) <= 1 THEN 'Restock'
-	    WHEN (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) > 1 
-		 AND (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) <= 5 THEN 'Stocked'
-            WHEN (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) > 5 
-		 AND (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) <= 10 THEN 'Overstocked'
-            ELSE 'Severely Overstocked' END AS inventoryStatus
+       ROUND(quantityInStock / (SUM(quantityOrdered) / (2 + (5/12))), 2) AS yearsInventoryLeft
   FROM products p
   JOIN orderdetails od
     ON p.productCode = od.productCode
  GROUP BY 1, 2
- ORDER BY 1, 8 DESC;  
- 
+ ORDER BY 1, 4, 8 DESC;  
+   
 -- Query 4
 -- Product line inventory. 
-SELECT warehouseCode, productLine,
-       COUNT(CASE WHEN inventoryStatus = 'Restock' THEN 1 ELSE NULL END) AS 'restock <1 yr',
-       COUNT(CASE WHEN inventoryStatus = 'Stocked' THEN 1 ELSE NULL END) AS 'stocked <5 yr',
-       COUNT(CASE WHEN inventoryStatus = 'Overstocked' THEN 1 ELSE NULL END) AS 'overstocked <10 yr',
-       COUNT(CASE WHEN inventoryStatus = 'Severely Overstocked' THEN 1 ELSE NULL END) AS 'severelyOverstocked >10 yr',
-       ROUND(COUNT(CASE WHEN inventoryStatus = 'Severely Overstocked' THEN 1 ELSE NULL END) / COUNT(1), 2) 
-       AS pctSeverelyOverstocked
+SELECT sub.warehouseCode, warehouseName, productLine,
+       COUNT(CASE WHEN yearsInventoryLeft < 1 THEN 1 ELSE NULL END) AS 'inventory <1 yr',
+       COUNT(CASE WHEN yearsInventoryLeft >= 1 AND yearsInventoryLeft < 5 THEN 1 ELSE NULL END) AS 'inventory <5 yr',
+       COUNT(CASE WHEN yearsInventoryLeft >= 5 AND yearsInventoryLeft < 10 THEN 1 ELSE NULL END) AS 'inventory <10 yr',
+       COUNT(CASE WHEN yearsInventoryLeft >= 10 THEN 1 ELSE NULL END) AS 'inventory >10 yr',
+       ROUND(COUNT(CASE WHEN yearsInventoryLeft >= 10  THEN 1 ELSE NULL END) / COUNT(1), 2) 
+       AS 'pctInventory >10 yr'
   FROM (SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrdered) AS totalOrders,
 	       ROUND((SUM(quantityOrdered) / (2 + (5/12))), 2) AS oneYearOrders, quantityInStock AS currentInventory, 
-	       ROUND(quantityInStock / (SUM(quantityOrdered) / (2 + (5/12))), 2) AS yearsInventoryLeft,
-	       CASE WHEN (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) <= 1 THEN 'Restock'
-		    WHEN (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) > 1 
-		         AND (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) <= 5 THEN 'Stocked'
-		    WHEN (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) > 5 
-			 AND (quantityInStock / (SUM(quantityOrdered) / (2 + (5/12)))) <= 10 THEN 'Overstocked'
-		    ELSE 'Severely Overstocked' END AS inventoryStatus
-	 FROM products p
-	 JOIN orderdetails od
-	   ON p.productCode = od.productCode
-	GROUP BY 1, 2
-	ORDER BY 1, 8 DESC
+	       ROUND(quantityInStock / (SUM(quantityOrdered) / (2 + (5/12))), 2) AS yearsInventoryLeft
+	  FROM products p
+	  JOIN orderdetails od
+	    ON p.productCode = od.productCode
+	 GROUP BY 1, 2
+	 ORDER BY 1, 4, 8 DESC
        ) sub
- GROUP BY 1, 2;
+  JOIN warehouses w
+    ON sub.warehouseCode = w.warehouseCode
+ GROUP BY 1, 3;
 
 -- Query 5
 -- Warehouse orders and inventory.
