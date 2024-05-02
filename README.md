@@ -14,4 +14,4 @@ Reducing Inventory:
 Table 3 lists products and orders and predicts how long inventory will last. Table 4 lists these inventory predictions by product line.
 Table 5 shows orders and inventory predictions by warehouse. Based on these predictions if current inventory were reduced to the ten 
 year order prediction the North as well as the South warehouse could be eliminated. If current inventory were reduced to the 
-five year order prediction only one warehouse would be needed.
+five year order prediction only one warehouse would be needed. Table 6 shows missing data.
