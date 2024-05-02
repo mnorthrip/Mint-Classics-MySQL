@@ -1,7 +1,7 @@
-/* Two options to eliminate South warehouse at current inventory. */
+/* Warehouse elimination at current inventory. */
 
 -- Query 1
--- Absorb South warehouse into East or West warehouse.
+-- Warehouse capacity.
 SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, 
        SUM(quantityInStock) AS currentInventory, warehousePctCap,
        ROUND(SUM(quantityInStock) / (warehousePctCap / 100), 0) AS warehouseCap
@@ -11,7 +11,7 @@ SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products,
  GROUP BY 1;
 
 -- Query 2
--- Distribute South warehouse product lines among remaining warehouses.
+-- Warehouse product lines.
 SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, productLine, 
        SUM(quantityInStock) AS currentInventory, warehousePctCap, warehouseCap
   FROM products p
@@ -30,7 +30,7 @@ SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, productLi
 /* Inventory Reduction. */
 
 -- Query 3
--- Product Line summary stats.
+-- Product orders and inventory.
 SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrdered) AS totalOrders,
        ROUND((SUM(quantityOrdered) / (2 + (5/12))), 2) AS oneYearOrders, quantityInStock AS currentInventory, 
        ROUND(quantityInStock / (SUM(quantityOrdered) / (2 + (5/12))), 2) AS yearsInventoryLeft,
@@ -47,7 +47,7 @@ SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrder
  ORDER BY 1, 8 DESC;  
  
 -- Query 4
--- Overstocked inventory. 
+-- Product line inventory. 
 SELECT warehouseCode, productLine,
        COUNT(CASE WHEN inventoryStatus = 'Restock' THEN 1 ELSE NULL END) AS 'restock <1 yr',
        COUNT(CASE WHEN inventoryStatus = 'Stocked' THEN 1 ELSE NULL END) AS 'stocked <5 yr',
@@ -72,7 +72,7 @@ SELECT warehouseCode, productLine,
  GROUP BY 1, 2;
 
 -- Query 5
--- Reducing inventory can eliminate more warehouses.
+-- Warehouse orders and inventory.
 SELECT pr.warehouseCode, warehouseName, COUNT(pr.productCode) AS products, orders AS totalOrders, ROUND((orders / (2 + (5/12))), 2) AS oneYearOrders,
        ROUND((orders / (2 + (5/12))) * 5, 2) AS fiveYearsOrders, ROUND((orders / (2 + (5/12))) * 10, 2) AS tenYearsOrders,
        SUM(quantityInStock) AS currentInventory, ROUND(SUM(quantityInStock) / (orders / (2 + (5/12))), 2) AS yearsInventoryLeft, 
