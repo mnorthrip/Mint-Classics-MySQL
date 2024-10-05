@@ -1,8 +1,0 @@
-warehouseCode,warehouseName,products,productLine,currentInventory,warehousePctCap,warehouseCap
-a,North,13,Motorcycles,69401,72,182900
-a,North,12,Planes,62287,72,182900
-b,East,38,"Classic Cars",219183,67,327139
-c,West,24,"Vintage Cars",124880,50,249760
-d,South,11,"Trucks and Buses",35851,75,105840
-d,South,9,Ships,26833,75,105840
-d,South,3,Trains,16696,75,105840
