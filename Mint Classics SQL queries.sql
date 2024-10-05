@@ -1,35 +1,4 @@
-/* Inventory Reorganization. */
-
 -- Query 1
--- Warehouse capacity.
-SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, 
-       SUM(quantityInStock) AS currentInventory, warehousePctCap,
-       ROUND(SUM(quantityInStock) / (warehousePctCap / 100), 0) AS warehouseCap
-  FROM products p
-  JOIN warehouses w
-    ON p.warehouseCode = w.warehouseCode
- GROUP BY 1;
-
--- Query 2
--- Warehouse product lines.
-SELECT p.warehouseCode, warehouseName, COUNT(productCode) AS products, productLine, 
-       SUM(quantityInStock) AS currentInventory, warehousePctCap, warehouseCap
-  FROM products p
-  JOIN warehouses w
-    ON p.warehouseCode = w.warehouseCode
-  JOIN (SELECT pr.warehouseCode, 
-	       ROUND(SUM(quantityInStock) / (warehousePctCap / 100), 0) AS warehouseCap
-	  FROM products pr
-	  JOIN warehouses wa
-	    ON pr.warehouseCode = wa.warehouseCode
-	 GROUP BY 1
-       ) sub
-    ON p.warehouseCode = sub.warehouseCode
- GROUP BY 1, 4;
- 
-/* Inventory Reduction. */
-
--- Query 3
 -- Product orders and inventory.
 SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrdered) AS totalOrders,
        ROUND((SUM(quantityOrdered) / (2 + (5/12))), 2) AS oneYearOrders, quantityInStock AS currentInventory, 
@@ -40,7 +9,7 @@ SELECT warehouseCode, p.productCode, productName, productLine, SUM(quantityOrder
  GROUP BY 1, 2
  ORDER BY 1, 4, 8 DESC;  
    
--- Query 4
+-- Query 2
 -- Product line inventory. 
 SELECT sub.warehouseCode, warehouseName, productLine,
        COUNT(CASE WHEN yearsInventoryLeft < 1 THEN 1 ELSE NULL END) AS 'inventory <1 yr',
@@ -62,7 +31,7 @@ SELECT sub.warehouseCode, warehouseName, productLine,
     ON sub.warehouseCode = w.warehouseCode
  GROUP BY 1, 3;
 
--- Query 5
+-- Query 3
 -- Warehouse orders and inventory.
 SELECT pr.warehouseCode, warehouseName, COUNT(pr.productCode) AS products, orders AS totalOrders, 
        ROUND((orders / (2 + (5/12))), 2) AS oneYearOrders, ROUND((orders / (2 + (5/12))) * 5, 2) AS fiveYearsOrders, 
@@ -82,13 +51,3 @@ SELECT pr.warehouseCode, warehouseName, COUNT(pr.productCode) AS products, order
     ON pr.warehouseCode = w.warehouseCode
  GROUP BY 1, 4
  ORDER BY 1;
- 
-/* Miscellaneous */
-
--- Query 6
--- Product missing sales data.
-SELECT warehouseCode, p.productCode, productName, productLine, quantityOrdered, quantityInStock
-  FROM orderdetails o
- RIGHT JOIN products p
-    ON o.productCode = p.productCode
- WHERE p.productCode = 'S18_3233' 
