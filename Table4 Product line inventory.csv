@@ -1,8 +1,0 @@
-warehouseCode,warehouseName,productLine,"inventory <1 yr","inventory <5 yr","inventory <10 yr","inventory >10 yr","pctInventory >10 yr"
-a,North,Motorcycles,2,1,1,9,0.69
-a,North,Planes,0,2,2,8,0.67
-b,East,"Classic Cars",1,5,4,27,0.73
-c,West,"Vintage Cars",1,2,6,15,0.63
-d,South,Ships,0,5,1,3,0.33
-d,South,Trains,0,1,0,2,0.67
-d,South,"Trucks and Buses",0,4,4,3,0.27
