@@ -1,5 +1,0 @@
-warehouseCode,warehouseName,products,totalOrders,oneYearOrders,fiveYearsOrders,tenYearsOrders,currentInventory,yearsInventoryLeft,warehouseCap
-a,North,25,24650,10200.00,51000.00,102000.00,131688,12.91,182900
-b,East,38,35582,14723.59,73617.93,147235.86,219183,14.89,327139
-c,West,24,22933,9489.52,47447.59,94895.17,124880,13.16,249760
-d,South,23,22351,9248.69,46243.45,92486.90,79380,8.58,105840
